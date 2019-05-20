@@ -539,6 +539,9 @@ export default class ProjectTemplatesPlugin {
         // actually copy the file recursively
         await this.recursiveApplyInDir(templateDir, workspace, copyFunc);    
         
+
+        require("./runScripts").run(workspace, this.config);
+
         return template;
     }
 

@@ -57,6 +57,18 @@
                     ],
                     "default": {},
                     "description": "List of placeholders, in key-value string pairs."
+                },
+                "projectTemplates.supportedScipts": {
+                    "type": [
+                        "object"
+                    ],
+                    "default": {
+                        "php": "php",
+                        "bat": "",
+                        "sh": "sh",
+                        "py": "python"
+                    },
+                    "description": "The prefix for running different automated scripts."
                 }
             }
         },
