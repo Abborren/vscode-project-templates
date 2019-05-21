@@ -12,6 +12,7 @@ import OpenTemplatesFolderCommand = require('./commands/openTemplatesFolderComma
 import SaveProjectAsTemplateCommand = require('./commands/saveProjectAsTemplateCommand');
 import DeleteTemplateCommand = require('./commands/deleteTemplateCommand');
 import CreateProjectFromTemplateCommand = require('./commands/createProjectFromTemplateCommand');
+import CreateTemplateScriptsFolderCommand = require('./commands/createTemplateScriptsFolderCommand');
 
 /**
  * Main entry point for extension
@@ -46,6 +47,10 @@ export function activate(context: vscode.ExtensionContext) {
         CreateProjectFromTemplateCommand.run.bind(undefined, projectTemplatesPlugin));
     context.subscriptions.push(createProjectFromTemplate);
 
+    // create project from template
+    let createTemplateScriptsFolder = vscode.commands.registerCommand('extension.createTemplateScriptsFolder',
+        CreateTemplateScriptsFolderCommand.run.bind(undefined, projectTemplatesPlugin));
+    context.subscriptions.push(createTemplateScriptsFolder);
 }
 
 // this method is called when your extension is deactivated

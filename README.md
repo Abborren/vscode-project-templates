@@ -10,7 +10,7 @@ Inspired by [this File Templates Extension](https://github.com/brpaz/vscode-file
 * Create a new project from a template directory
 * Save the current project as a template directory
 * Use customizable placeholders for easy interactive configuration
-
+* Run customizable scripts automatically when creating projects from template 
 
 ![demo](https://raw.githubusercontent.com/cantonios/vscode-project-templates/master/images/demofast.gif)
 
@@ -24,16 +24,23 @@ This extension contributes the following settings:
 
 ```ts
 {
-  "projectTemplates.templatesDirectory": "",          // default directory containing project templates
-  "projectTemplates.usePlaceholders": true,           // activate placeholder substitution
-  "projectTemplates.placeholders": {  },              // dictionary of default placeholder key-value pairs
-  "projectTemplates.placeholderRegExp": "#{(\\w+?)}"  // regular expression to use for detecting placeholders
+  "projectTemplates.templatesDirectory": "",           // default directory containing project templates
+  "projectTemplates.usePlaceholders": true,            // activate placeholder substitution
+  "projectTemplates.placeholders": {  },               // dictionary of default placeholder key-value pairs
+  "projectTemplates.placeholderRegExp": "#{(\\w+?)}",  // regular expression to use for detecting placeholders
+  "projectTemplates.supportedScipts": {                // Supported script filetypes and their commandline run prefix
+    "php": "php",
+    "py": "python",
+    //"bat": "",                                       // optional since os dependant
+    //"sh": "sh",                                      // optional since os dependant
+  },
+  "projectTemplates.deleteScripts": true              // If templateScripts folder should be deleted after runtime
 }
 ```
 
 ## Known Issues
 
-* None
+* Running scripts with WSL as default terminal in windows will not work.
 
 ## Release Notes
 
@@ -56,6 +63,7 @@ Extension commands can be executed from the Command Palette or from the context 
 
 * Create the desired template project in your current root workspace directory.  Use the Command Palette to execute the command "Project: Save Project As Template".  Enter the name for your template.  The contents of your root workspace directory will be copied to a new template folder.
 * If called from the context menu, the contents of the selected folder will be copied to the new template folder.
+* If desired create a folder called templateScripts and add scripts of supported filetype, these will autorun when a project is created from a template. the folder will get deleted afterwards unless that option is disabled in the settings.
 
 ## Placeholders
 

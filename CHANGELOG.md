@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+# [1.3.0] - 2019-05-21
+
+- Added a functions enabling running of customizable automatic scripting when creating projects from template.
+
+
 ## [1.2.0] - 2018-12-09
 
 - Resolve predefined variables in templates folder path (https://code.visualstudio.com/docs/editor/variables-reference)

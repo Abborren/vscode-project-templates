@@ -64,11 +64,16 @@
                     ],
                     "default": {
                         "php": "php",
-                        "bat": "",
-                        "sh": "sh",
                         "py": "python"
                     },
                     "description": "The prefix for running different automated scripts."
+                },
+                "projectTemplates.deleteScripts": {
+                    "type": [
+                        "boolean"
+                    ],
+                    "default": true,
+                    "description": "Decides if the templateScript folder gets deleted after scripts are run."
                 }
             }
         },
@@ -91,6 +96,11 @@
             {
                 "command": "extension.createProjectFromTemplate",
                 "title": "Create Project from Template",
+                "category": "Project"
+            },
+            {
+                "command": "extension.createTemplateScriptsFolder",
+                "title": "Create Project template script folder",
                 "category": "Project"
             }
         ],
