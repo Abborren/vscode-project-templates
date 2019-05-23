@@ -19,7 +19,7 @@ export function run(scriptFolder: string, config: WorkspaceConfiguration) {
             }
             files.forEach(function (file) {
                 //Checks all supported filetypes
-                supportedFileType(file, config, terminal, scriptFolder);
+                runSupportedScript(file, config, terminal, scriptFolder);
             });
             let deleteScripts: boolean = config.get("deleteScripts", true);
             if (deleteScripts) {
@@ -34,7 +34,7 @@ export function run(scriptFolder: string, config: WorkspaceConfiguration) {
  * @param config The workspace config with the settings variables.
  * @param terminal The new terminal window.
  */
-function supportedFileType(file: string, config: WorkspaceConfiguration, terminal: vscode.Terminal, workspace: string) {
+function runSupportedScript(file: string, config: WorkspaceConfiguration, terminal: vscode.Terminal, workspace: string) {
 
     let suffix = path.extname(file).replace(".", "");
     let types: { [types: string]: string[] | null } = config.get("supportedScipts", {});
