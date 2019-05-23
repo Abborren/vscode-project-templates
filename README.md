@@ -31,8 +31,8 @@ This extension contributes the following settings:
   "projectTemplates.supportedScipts": {                // Supported script filetypes and their commandline run prefix
     "php": "php",
     "py": "python",
-    //"bat": "",                                       // optional since os dependant
-    //"sh": "sh",                                      // optional since os dependant
+    //"bat": "",                                       // Example of adding more script types
+    //"sh": "sh",                                      // Example of adding more script types
   },
   "projectTemplates.deleteScripts": true              // If templateScripts folder should be deleted after runtime
 }
@@ -63,7 +63,7 @@ Extension commands can be executed from the Command Palette or from the context 
 
 * Create the desired template project in your current root workspace directory.  Use the Command Palette to execute the command "Project: Save Project As Template".  Enter the name for your template.  The contents of your root workspace directory will be copied to a new template folder.
 * If called from the context menu, the contents of the selected folder will be copied to the new template folder.
-* If desired create a folder called templateScripts and add scripts of supported filetype, these will autorun when a project is created from a template. the folder will get deleted afterwards unless that option is disabled in the settings.
+* If desired create a folder called templateScripts and add scripts of supported filetype, these will autorun when a project is created from a template. The script folder will get deleted afterwards unless that option is disabled in the settings.
 
 ## Placeholders
 
